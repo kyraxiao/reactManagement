@@ -14,7 +14,8 @@ const ApplicationConfigurations:React.FC=():ReactElement=>{
           title: 'RequestType',
           dataIndex: 'requestType',
           key: 'requestType',
-          render: text => <a>{text}</a>,
+          render: text => <Button type="text" className="textBotton" onClick={()=>{
+          }}>{text}</Button>,
         },
         {
           title: 'Description',
@@ -37,7 +38,7 @@ const ApplicationConfigurations:React.FC=():ReactElement=>{
 
           render: (text) => (
             <>
-              <Button onClick={()=>{
+              <Button type="text" className="textBotton" onClick={()=>{
                   console.log(text)
               }}>Delete</Button>
             </>

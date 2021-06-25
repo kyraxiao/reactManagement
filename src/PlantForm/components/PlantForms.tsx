@@ -11,19 +11,17 @@ interface clounType {
     email:String;
     status:Boolean;
 }
-type  lady={ 
-  key: String;
-  name:String;
-  shortname:String;
-  email:String;
-  status:Boolean;} 
 const PlantForms:React.FC=():ReactElement=>{
     const columns:ColumnsType<clounType> = [
         {
           title: 'Name',
           dataIndex: 'name',
           key: 'name',
-          render: text => <a>{text}</a>,
+          render: (text,record) => <Button type="text" className="textBotton" onClick={()=>{
+            const { form }: any = getForm.current;
+            setVis(true)
+            form.setFieldsValue(record)
+          }}>{text}</Button>,
         },
         {
           title: 'Shortname',
@@ -49,13 +47,15 @@ const PlantForms:React.FC=():ReactElement=>{
 
           render: (text) => (
             <>
-              <Button type="link" onClick={()=>{
+              <Button type="text" className="textBotton" onClick={()=>{
                   console.log(text)
               }}>Detail</Button>
-              <Button type="link" onClick={()=>{
+              <Button type="text" className="textBotton" onClick={()=>{
                 let arr=data.filter(item=>{
                   if(JSON.stringify(item)!==JSON.stringify(text)){
-                      return item
+                      return item;
+                  }else{
+                    return false;
                   }
                 })
                 setData(arr)

@@ -15,7 +15,8 @@ const RequestHistorys:React.FC=():ReactElement=>{
           title: 'RequestType',
           dataIndex: 'requestType',
           key: 'requestType',
-          render: text => <a>{text}</a>,
+          render: text => <Button type="text" className="textBotton" onClick={()=>{
+          }}>{text}</Button>,
         },
         {
           title: 'Description',
@@ -38,7 +39,7 @@ const RequestHistorys:React.FC=():ReactElement=>{
 
           render: (text) => (
             <>
-              <Button type="link" onClick={()=>{
+              <Button type="text" className="textBotton" onClick={()=>{
                   console.log(text)
               }}>Delete</Button>
             </>

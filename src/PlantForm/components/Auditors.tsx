@@ -14,7 +14,8 @@ const Auditors:React.FC=():ReactElement=>{
           title: 'Name',
           dataIndex: 'name',
           key: 'name',
-          render: text => <a>{text}</a>,
+          render: text => <Button type="text" className="textBotton" onClick={()=>{
+          }}>{text}</Button>,
         },
         {
           title: 'Shortname',
@@ -40,7 +41,7 @@ const Auditors:React.FC=():ReactElement=>{
 
           render: (text) => (
             <>
-              <Button type="link" onClick={()=>{
+              <Button type="text" className="textBotton" onClick={()=>{
                   console.log(text)
               }}>Delete</Button>
             </>
