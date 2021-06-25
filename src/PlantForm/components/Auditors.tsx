@@ -1,0 +1,80 @@
+import { ReactElement } from "react";
+import { Table,Button,Switch  } from 'antd';
+import { ColumnsType } from 'antd/es/table';
+interface clounType {
+    key: String;
+    name:String;
+    shortname:String;
+    email:String;
+    status:Boolean;
+}
+const Auditors:React.FC=():ReactElement=>{
+    const columns:ColumnsType<clounType> = [
+        {
+          title: 'Name',
+          dataIndex: 'name',
+          key: 'name',
+          render: text => <a>{text}</a>,
+        },
+        {
+          title: 'Shortname',
+          dataIndex: 'shortname',
+          key: 'shortname',
+        },
+        {
+          title: 'Email',
+          dataIndex: 'email',
+          key: 'email',
+        },
+        {
+          title: 'Status',
+          key: 'status',
+          dataIndex: 'status',
+          render:(tag)=>(
+            <Switch defaultChecked={tag}></Switch> 
+          )
+        },
+        {
+          title: 'Operation',
+          key: 'Operation',
+
+          render: (text) => (
+            <>
+              <Button type="link" onClick={()=>{
+                  console.log(text)
+              }}>Delete</Button>
+            </>
+          ),
+        },
+      ];
+      
+      const data = [
+        {
+          key: '1',
+          name: 'John Brown',
+          shortname:'John',
+          email:'John@qq.com',
+          status:true
+        },
+        {
+          key: '2',
+          name: 'Jim Green',
+          shortname:'Jim',
+          email:'Jim@qq.com',
+          status:true
+        },
+        {
+          key: '3',
+          name: 'Joe Black',
+          shortname:'Joe',
+          email:'Joe@qq.com',
+          status:false
+        },
+      ];
+    return(
+        <div>
+           <Table columns={columns} dataSource={data} />
+        </div>
+    )
+}
+export default Auditors

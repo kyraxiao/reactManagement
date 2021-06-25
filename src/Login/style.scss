@@ -1,0 +1,16 @@
+.loginBox{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:url('../assets/images/back.jpg');
+}
+.formSty{
+    height: 300px;
+    min-width: 400px;
+    padding: 30px;
+    background-color: #fff; 
+    border-radius: 5px;  
+}
+   
