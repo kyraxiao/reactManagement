@@ -9,7 +9,7 @@ interface clounType {
     name:String;
     shortname:String;
     email:String;
-    status:Boolean;
+    status:string;
 }
 const PlantForms:React.FC=():ReactElement=>{
     const columns:ColumnsType<clounType> = [
@@ -37,8 +37,16 @@ const PlantForms:React.FC=():ReactElement=>{
           title: 'Status',
           key: 'status',
           dataIndex: 'status',
-          render:(tag)=>(
-            <Switch defaultChecked={tag}></Switch> 
+          render:(tag,record)=>(
+            <Switch defaultChecked={tag==='Active'?true:false} onChange={(checked)=>{
+              let arr=data.map(i=>{
+                if(i.key===record.key){
+                  checked?i.status='Active':i.status='Inactive'
+                }
+                return i
+              })
+              setData(arr)
+            }}></Switch>  
           )
         },
         {
@@ -48,7 +56,9 @@ const PlantForms:React.FC=():ReactElement=>{
           render: (text) => (
             <>
               <Button type="text" className="textBotton" onClick={()=>{
-                  console.log(text)
+                  setVis(true)
+                  const { form }: any = getForm.current;
+                  form.setFieldsValue(text)
               }}>Detail</Button>
               <Button type="text" className="textBotton" onClick={()=>{
                 let arr=data.filter(item=>{
@@ -107,7 +117,7 @@ const PlantForms:React.FC=():ReactElement=>{
             const { form }: any = getForm.current;
             const value=await form.validateFields()
             arr.push({...value,key:Math.random()*10})
-            setData(arr)
+            setData([...data,...arr])
             form.resetFields()
             setVis(false)
           }}

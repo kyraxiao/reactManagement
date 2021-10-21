@@ -67,6 +67,12 @@ const Log:React.FC=():ReactElement=>{
           description:'data',
           creationTime:'2021-06-15',
           creator:'admin',
+        },{
+          key: '4',
+          requestType:'data permisson',
+          description:'data',
+          creationTime:'2021-06-15',
+          creator:'admin',
         },
       ];
     return(
