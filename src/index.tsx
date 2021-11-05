@@ -4,6 +4,7 @@ import './index.scss';
 import 'antd/dist/antd.css';
 import './assets/scssCommon/common.scss'
 import AuthRoute from'./routes/index'
+import './assets/font/iconfont.css'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

@@ -54,6 +54,11 @@ const Aside:React.FC=():ReactElement=>{
         }}>
             Log
         </Menu.Item>
+        <Menu.Item key="5" onClick={()=>{
+            history.push('/Homes/TestTab')
+        }}>
+            TestTab
+        </Menu.Item>
         </Menu>
     </div>
     )

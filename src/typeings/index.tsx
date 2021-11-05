@@ -1,4 +1,4 @@
-import {RefObject} from 'react'
+import {RefObject,ReactNode} from 'react'
 export  interface IProps {
     vis:boolean,
     colseDrawer:()=>void,
@@ -22,4 +22,13 @@ interface TdF{
 export  interface IPropsForm {
     forwardedRef?: RefObject<HTMLElement>
     formList:TdF[],
+}
+
+export interface elTabProps{
+    activeName:string,
+    children:ReactNode[]
+}
+export interface elTabPanProps{
+    name:string,
+    label:string,
 }

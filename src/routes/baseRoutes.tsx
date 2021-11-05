@@ -9,6 +9,7 @@ const RequestHistory=lazy(()=>import('../RequestProcess/RequestHistory'))
 const UserConfiguration=lazy(()=>import('../PrivilegeConfiguration/UserConfiguration'))
 const ApplicationConfiguration=lazy(()=>import('../PrivilegeConfiguration/ApplicationConfiguration'))
 const Log=lazy(()=>import('../Log/index'))
+const TestTab=lazy(()=>import('../TestTabs/index'))
 export interface RouteType{
     path:string,
     exact?:boolean,
@@ -45,6 +46,9 @@ export const routes:RouteType[]=[
             },{
                 path: "/Homes/Log",
                 component:Log
+            },{
+                path: "/Homes/TestTab",
+                component:TestTab
             }
           ]
     },{

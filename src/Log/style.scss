@@ -1,0 +1,27 @@
+.flexs{
+    display: flex;
+    justify-content: space-between;
+}
+.ulBox li{
+    margin-top:16px;
+}
+.ulBox>li>span:nth-of-type(2){
+    width: 300px;
+    display: inline-block;
+    margin-left:15px;
+}
+.spanCRIL{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    color:#fff;
+    background-color:#314659;
+    border-radius:50%;
+    text-align: center;
+}
+.spanNo{
+    display: inline-block;
+    width:20px;
+    height:20px; 
+    text-align: center;
+}
